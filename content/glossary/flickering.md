@@ -1,5 +1,5 @@
 ---
-title: flcikering
+title: flickering
 description:
 date:
 draft: false
