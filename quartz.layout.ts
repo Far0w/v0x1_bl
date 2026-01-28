@@ -8,8 +8,8 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      //GitHub: "https://github.com/jackyzha0/quartz",
+      //"Discord Community": "https://discord.gg/cRFFHYye7t",
     },
   }),
 }
@@ -22,7 +22,23 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.ArticleTitle(),
+
     Component.ContentMeta(),
+
+    Component.ConditionalRender({
+    component: Component.RecentNotes({
+      title: "All articles",
+      limit: 9999,
+      showTags: true,
+      filter: (f) => {
+        if (f.slug === "index") return false
+        if (f.slug === "glossary" || f.slug.startsWith("glossary/")) return false
+        return true
+      },
+    }),
+    condition: (page) => page.fileData.slug === "index",
+  }),
+
     Component.TagList(),
   ],
   left: [
@@ -38,7 +54,19 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      filterFn: (node) => {
+        const name = (node.name ?? "").toLowerCase()
+        const slug = (node.slug ?? "").toLowerCase()
+
+        // cache le dossier "glossary" lui-même + tout ce qu'il contient
+        if (name === "glossary") return false
+        if (slug === "glossary" || slug.startsWith("glossary/")) return false
+
+        return true
+      },
+    }
+    ),
   ],
   right: [
     Component.Graph(),
