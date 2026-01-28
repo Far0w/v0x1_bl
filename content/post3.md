@@ -3,6 +3,6 @@ title: "Post #3"
 draft: false
 tags:
   - touchdesigner
-  - synth
+  - soundreactive
 ---
 ![[out1.jpeg]]
