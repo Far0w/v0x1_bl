@@ -4,6 +4,8 @@ description:
 date: 2026-02-06
 draft: false
 tags:
+  - touchdesigner
+  - kinect
 ---
 ![[recording_16.webm]]
 

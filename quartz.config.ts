@@ -8,15 +8,20 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "V0X1",
-    pageTitleSuffix: " - v0x1",
+    pageTitle: "Voximachina",
+    pageTitleSuffix: " - Voximachina",
+    siteMetadata: {
+      title: "Voximachina",
+      description:
+        "Voximachina is a personal knowledge garden with notes and projects about touchdesigner, modular synthesizer, and generative art.",
+    },
     enableSPA: true,
     enablePopovers: true,
     analytics: {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "far0w.github.io/v0x1_bl",
+    baseUrl: "voximachina.xyz",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
