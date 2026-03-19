@@ -1,5 +1,5 @@
 ---
-title: 11_shapes_from_pic_w_blob
+title: td11_shapes_from_pic_w_blob
 draft: false
 tags:
   - touchdesigner

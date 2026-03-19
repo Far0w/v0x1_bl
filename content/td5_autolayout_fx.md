@@ -1,5 +1,5 @@
 ---
-title: 5_autolayout_fx
+title: td5_autolayout_fx
 description: Glitchy generative sequence
 date: 2025-11-30
 draft: false
