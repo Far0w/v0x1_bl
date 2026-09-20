@@ -54,6 +54,7 @@ export const defaultContentPageLayout: PageLayout = {
         //{ Component: Component.ReaderMode() },
       ],
     }),
+    Component.EowLink(),
     Component.Explorer({
       filterFn: (node) => {
         const name = (node.name ?? "").toLowerCase()
